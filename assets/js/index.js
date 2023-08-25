@@ -60,20 +60,10 @@ function stringToColor(str) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
 
-  const color = Math.abs(hash).toString(16).substring(0, 6); // Take the first 6 characters
+  const color = Math.abs(hash).toString(16).substring(0, 6);
 
-  return "#" + "0".repeat(6 - color.length) + color; // Pad with zeros if necessary
+  return "#" + "0".repeat(6 - color.length) + color;
 }
-
-// let imageClicked = false;
-
-// let counter = 0;
-
-// function incrementCounter() {
-//   counter++;
-//   console.log(`Counter: ${counter}`);
-// }
-// const divContainer = document.getElementById("divContainer");
 
 function createActorCard({ firstName, lastName, profilePicture, contacts }) {
   console.log(firstName, lastName, profilePicture, contacts);
@@ -86,11 +76,6 @@ function createActorCard({ firstName, lastName, profilePicture, contacts }) {
   const li = createElement("li", {
     className: "list-style-none card",
     appendTo: ul,
-    // events: {
-    //   click: () => {
-    //     alert(`${firstName} clicked!`);
-    //   },
-    // },
   });
   const imgWrapper = createElement("div", {
     className: "imgWrapper",
@@ -143,14 +128,12 @@ function createActorCard({ firstName, lastName, profilePicture, contacts }) {
   const divContainer = document.getElementById("divContainer");
   li.addEventListener("click", () => {
     if (counter === 0) {
-      // Only execute this code on the first click
       incrementCounter();
       const newH5 = createElement("h5", {
         text: `${firstName} ${lastName}`,
         appendTo: li,
       });
 
-      // Append the new image to the divContainer
       divContainer.appendChild(newH5);
     }
   });
