@@ -1,0 +1,8 @@
+1. fetch
+2. createElem func
+3. create h1
+create list of items:
+  img,(initials and back if img is not available) h2, socials icons
+
+  create counter
+  let count = 0
